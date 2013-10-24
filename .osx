@@ -104,16 +104,16 @@ systemsetup -setcomputersleep Off > /dev/null
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
 # Disable Notification Center and remove the menu bar icon
-launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist
+#launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
 
 # Trackpad: enable tap to click for this user and for the login screen
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+#defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+#defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+#defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # Trackpad: map bottom right corner to right-click
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
@@ -156,13 +156,13 @@ defaults write com.apple.BezelServices kDimTime -int 300
 # Set language and text formats
 # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
 # `Inches`, `en_GB` with `en_US`, and `true` with `false`.
-defaults write NSGlobalDomain AppleLanguages -array "en" "nl"
-defaults write NSGlobalDomain AppleLocale -string "en_GB@currency=EUR"
+defaults write NSGlobalDomain AppleLanguages -array "fr" "en"
+defaults write NSGlobalDomain AppleLocale -string "fr_FR@currency=EUR"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
 
 # Set the timezone; see `systemsetup -listtimezones` for other values
-systemsetup -settimezone "Europe/Brussels" > /dev/null
+systemsetup -settimezone "Europe/Paris" > /dev/null
 
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
@@ -172,11 +172,11 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 ###############################################################################
 
 # Require password immediately after sleep or screen saver begins
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
+#defaults write com.apple.screensaver askForPassword -int 1
+#defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # Save screenshots to the desktop
-defaults write com.apple.screencapture location -string "${HOME}/Desktop"
+defaults write com.apple.screencapture location -string "${HOME}/screenshots"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
@@ -195,7 +195,7 @@ sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutio
 ###############################################################################
 
 # Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
-defaults write com.apple.finder QuitMenuItem -bool true
+#defaults write com.apple.finder QuitMenuItem -bool true
 
 # Finder: disable window animations and Get Info animations
 defaults write com.apple.finder DisableAllAnimations -bool true
@@ -245,9 +245,9 @@ defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
 defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
 
 # Automatically open a new Finder window when a volume is mounted
-defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
-defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
-defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
+#defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
+#defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
+#defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 
 # Show item info near icons on the desktop and in other icon views
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:showItemInfo true" ~/Library/Preferences/com.apple.finder.plist
@@ -544,7 +544,7 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
 
 # Disable continuous spell checking
-defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
+#defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
 
 ###############################################################################
 # Google Chrome & Google Chrome Canary                                        #
