@@ -49,5 +49,9 @@ brew install zopfli
 brew tap homebrew/versions
 brew install lua52
 
+brew install htop
+sudo chown root:wheel /usr/local/Cellar/htop-osx/*/bin/htop
+sudo chmod u+s /usr/local/Cellar/htop-osx/*/bin/htop
+
 # Remove outdated versions from the cellar
 brew cleanup
