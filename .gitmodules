@@ -1,0 +1,9 @@
+[submodule ".vim/bundle/javascript"]
+	path = .vim/bundle/javascript
+	url = https://github.com/jelera/vim-javascript-syntax.git
+[submodule ".vim/bundle/node"]
+	path = .vim/bundle/node
+	url = https://github.com/moll/vim-node.git
+[submodule ".vim/bundle/coffee"]
+	path = .vim/bundle/coffee
+	url = https://github.com/kchmck/vim-coffee-script.git

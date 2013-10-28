@@ -4,7 +4,7 @@ x=`echo $(( $RANDOM * $$ )) | base64`
 x=${x:0:5}
 
 if [ $# -eq 0 ]; then
-        file="~/screenshots/$(ls -t ~/screenshots/ | head -n 1)"
+        file="/Users/uto/screenshots/$(ls -t ~/screenshots/ | head -n 1)"
 else
         file=$1
 fi
