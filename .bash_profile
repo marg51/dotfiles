@@ -36,7 +36,7 @@ complete -W "NSGlobalDomain" defaults
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall
 
 # Add git tab completion
-complete -o "default" -o "nospace" -W "commit push status" git
+complete -o "default" -o "nospace" -W "commit push status" g
 
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion

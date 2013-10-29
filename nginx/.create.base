@@ -1,0 +1,22 @@
+
+server {
+
+	listen   $site_port ;
+	listen   [::]:$site_port;
+	server_tokens off;
+	server_name $sitename.uto.io;
+
+	include gzip.conf;
+	include cache_assets.conf;
+
+	access_log  /usr/local/var/log/nginx/$sitename.access.log;
+	error_log  /usr/local/var/log/nginx/$sitename.error.log;
+	location / {
+		root   $base/$root/;
+		index  index.html index.htm;
+		try_files $uri index.html;
+	}
+
+}
+
+
